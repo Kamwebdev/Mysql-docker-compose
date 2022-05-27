@@ -1,0 +1,20 @@
+version: '3.3'
+
+services:
+  db:
+    container_name: db-<app_name>
+    image: mysql:8.0.21
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: <mysql_password>
+    ports:
+      - "<app_mysql_port>:3306"
+    expose:
+      - '3306'
+    volumes:
+      - ./.docker/mysql-conf:/etc/mysql/conf.d
+      - ./.docker/mysql-init:/docker-entrypoint-initdb.d 
+      - db-<app_name>:/var/lib/mysql
+      # [option] - ./.docker/mysql-data:/var/lib/mysql
+volumes:
+  db-<app_name>:
