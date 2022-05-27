@@ -1,0 +1,14 @@
+[mysqld]
+
+lc_messages=pl_PL
+lc_time_names=pl_PL
+collation_server=utf8_polish_ci
+character_set_server=utf8
+
+max_connections = 900
+
+wait_timeout=240
+interactive_timeout=240
+
+skip-name-resolve=1
+log_error_verbosity=1
