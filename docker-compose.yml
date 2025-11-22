@@ -2,13 +2,13 @@ version: '3.3'
 
 services:
   db:
-    container_name: db-<app_name>
-    image: mysql:8.0.21
+    container_name: ${CONTAINER_NAME}
+    image: ${IMAGE_NAME}
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: <mysql_password>
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     ports:
-      - "<app_mysql_port>:3306"
+      - "${PORTS}:3306"
     expose:
       - '3306'
     volumes:
